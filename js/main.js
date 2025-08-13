@@ -4,10 +4,10 @@
     // loader
     setTimeout(function () {
         $('#preloader').fadeOut(600, function () {
-          $(this).remove();
+            $(this).remove();
         });
-      }, 1500);
-    
+    }, 1500);
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -20,8 +20,8 @@
             $('.nav-bar').removeClass('container-fluid px-4').addClass('container');
         }
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -31,7 +31,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -43,8 +43,8 @@
         items: 1,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<i class="bi bi-chevron-left"></i>',
             '<i class="bi bi-chevron-right"></i>'
         ]
@@ -66,23 +66,23 @@
         autoplay: true,
         autoplayTimeout: 2000,
         autoplayHoverPause: true,
-        nav: true,             
-        dots: false,           
-        navText: [             
+        nav: true,
+        dots: false,
+        navText: [
             '<span class="owl-prev-icon">&#10094;</span>',  // left arrow
             '<span class="owl-next-icon">&#10095;</span>'   // right arrow
         ],
         responsive: {
-        0: { items: 1 },
-        576: { items: 2 },
-        768: { items: 3 },
-        992: { items: 4 },
+            0: { items: 1 },
+            576: { items: 2 },
+            768: { items: 3 },
+            992: { items: 4 },
         }
     });
 
-    $(".product-carousel").on("mouseleave", function() {
+    $(".product-carousel").on("mouseleave", function () {
         $(this).trigger("play.owl.autoplay", [2000]);
-      });
-    
+    });
+
 })(jQuery);
 
