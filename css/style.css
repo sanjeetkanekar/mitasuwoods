@@ -307,7 +307,7 @@ html {
 .makers-section,
 .contact-section,
 .products-section,
-.usp-section {
+.kiln-section {
     background-color: #F3EEE8;
 }
 
@@ -321,7 +321,8 @@ html {
 .trusted-by-section h1,
 .contact-intro h1,
 .products-section h1,
-.usp-section h1 {
+.kiln-section h1,
+.keypoints-section h1 {
     font-size: 2rem;
     font-weight: 500;
 }
@@ -335,7 +336,8 @@ html {
 .trusted-by-section .section-title::after,
 .contactus .section-title::after,
 .products-section .section-title::after,
-.contact-section .section-title::after {
+.kiln-section .section-title::after,
+.keypoints-section .section-title::after {
     content: '';
     display: block;
     width: 60px;
@@ -1204,69 +1206,180 @@ textarea.form-control {
 
 
 /* usp page */
+
+.intro-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #8B5E3C; /* warm brown accent */
+    margin-bottom: 1rem;
+  }
   
+  .body-text {
+    color: #4a4a4a;
+    line-height: 1.7;
+  }
+ /* Equal height row */
+.equal-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .equal-columns > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Video frame rectangular */
   .video-frame {
-    border-radius: 16px;
+    flex: 1;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    border: 2px solid #e3d5c0; /* subtle wood-tone border */
   }
   
   .video-frame video {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
   }
   
-  .content-box {
-    padding: 20px 10px;
+  /* Features box */
+  .features-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
-  .content-box h2 {
-    font-size: 1.8rem;
-    color: #3b2f2f; /* deep wood tone */
-  }
-  
-  .content-box p {
-    line-height: 1.7;
-    color: #4a4a4a;
-    text-align: justify;
-  }
-  
-  .accent {
-    width: 50px;
-    height: 6px;
-    background: linear-gradient(90deg, #a47551, #d1b48c);
-    border-radius: 3px;
-  }
-
-
-
-  .kiln-significance {
-    background: #fcf9f6; /* soft beige tone */
-  }
-  
-  .icon-box {
-    width: 45px;
-    height: 45px;
-    background: #e6d4c1;
-    color: #5c4033;
-    border-radius: 12px;
+  /* Number circle theme */
+  .number-circle {
+    width: 44px;
+    height: 44px;
+    background: #A34725;
+    color: #fff;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.4rem;
-    margin-right: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
     flex-shrink: 0;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
   }
   
-  .closing-box {
-    border-top: 2px solid #e6d4c1;
+  /* Hover effect */
+  .numbered-points .d-flex:hover .number-circle {
+    transform: scale(1.15);
+    box-shadow: 0 6px 15px rgba(110, 75, 58, 0.4);
+  }
+  
+  .numbered-points .d-flex:hover h5 {
+    color: #6e4b3a;
+    transition: color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  
+ /* Closing box minimal style */
+.closing-box {
+    border-top: 1px solid #e0e0e0; /* subtle divider in theme color */
+  }
+  
+  .closing-box p {
     font-size: 1.1rem;
-    color: #4a3f35;
+    color: #444;
+    line-height: 1.6;
   }
   
   .text-brown {
-    color: #8b5e3c;
+    color: #A34725; /* theme highlight */
+    font-weight: 600;
   }
+  
+
+
+  .key-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    padding-top: 60px; /* extra space for circle */
+    overflow: visible; /* allow circle outside */
+  }
+  
+  .key-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+  
+  /* Icon Circle */
+  .icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #6e4b3a; /* theme brown */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 28px;
+    position: absolute;
+    top: -35px; /* overlap */
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+  
+
+
+/* --- Section Base --- */
+/* Section Styling */
+.craftsmanship-section {
+    background: #faf9f7;
+    position: relative;
+  }
+  
+  .craftsmanship-section .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3b2f2f;
+  }
+  
+  .craftsmanship-section .section-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+  
+  /* Decorative Image Layout */
+  .image-grid {
+    position: relative;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .decor-image {
+    width: 240px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .decor-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Decorative scattered placement */
+  .img1 { transform: rotate(-3deg); }
+  .img2 { transform: rotate(2deg); margin-top: 40px; }
+  .img3 { transform: rotate(-2deg); }
+  .img4 { transform: rotate(3deg); margin-top: 40px; }
+  
